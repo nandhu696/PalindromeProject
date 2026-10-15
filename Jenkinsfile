@@ -28,7 +28,8 @@ pipeline {
                     )
 
                     junit testResults: '**/target/surefire-reports/*.xml',
-                          allowEmptyResults: false
+      allowEmptyResults: false,
+      skipMarkingBuildUnstable: true
 
                     if (result != 0) {
                         echo 'TEST RESULT: FAILURE - Intentional negative test detected.'
